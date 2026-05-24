@@ -1,0 +1,486 @@
+/* ============================================
+   HomeOfficeHub — Modern Blog Stylesheet
+   Inter font, emerald accent, mobile-first
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap');
+
+/* ── CSS Variables ── */
+:root {
+  --bg-body: #ffffff;
+  --bg-card: #ffffff;
+  --bg-sidebar: #f9fafb;
+  --bg-ad: #f3f4f6;
+  --border-main: #e5e7eb;
+  --border-ad: #9ca3af;
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  --text-muted: #6b7280;
+  --accent: #10b981;
+  --accent-hover: #059669;
+  --accent-light: #d1fae5;
+  --affiliate-bg: #fef9e3;
+  --affiliate-border: #f59e0b;
+  --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --max-width: 1200px;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-hover: 0 4px 12px rgba(0,0,0,0.12);
+  --transition: all 0.2s ease;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  line-height: 1.6;
+  color: var(--text-primary);
+  background: var(--bg-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── Container ── */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ── Header ── */
+header {
+  background: rgba(255,255,255,0.95);
+  border-bottom: 1px solid var(--border-main);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(8px);
+  z-index: 100;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.logo a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.logo a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+nav {
+  display: flex;
+  gap: 24px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+nav a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* ── Layout Grids ── */
+.content-grid,
+.single-post-grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 40px;
+  margin: 40px 0;
+}
+
+/* ── Posts List ── */
+.posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ── Post Card ── */
+.post-card {
+  border-bottom: 1px solid var(--border-main);
+  padding-bottom: 24px;
+}
+
+.post-card h2 {
+  font-size: 1.75rem;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.post-card h2 a {
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.post-card h2 a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.post-meta {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  margin-bottom: 12px;
+}
+
+.post-excerpt {
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.read-more {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.read-more:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+/* ── Ad Slots ── */
+.ad-slot {
+  background: var(--bg-ad);
+  border: 1px dashed var(--border-ad);
+  text-align: center;
+  margin: 20px 0;
+  border-radius: var(--radius-sm);
+}
+
+.ad-placeholder {
+  padding: 20px;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.ad-top .ad-placeholder {
+  padding: 20px;
+}
+
+.ad-sidebar .ad-placeholder {
+  padding: 60px 20px;
+  margin-bottom: 24px;
+}
+
+.ad-300x600 .ad-placeholder {
+  padding: 150px 20px;
+}
+
+/* ── Affiliate Widget ── */
+.affiliate-widget {
+  background: var(--affiliate-bg);
+  padding: 20px;
+  border-radius: var(--radius);
+  border-left: 4px solid var(--affiliate-border);
+  margin-bottom: 24px;
+}
+
+.affiliate-widget h3 {
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.affiliate-widget ul {
+  list-style: none;
+  margin-bottom: 12px;
+}
+
+.affiliate-widget li {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.aff-link {
+  color: #2563eb;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.aff-link:hover {
+  color: #1d4ed8;
+}
+
+.disclosure-small {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.disclosure-note {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* ── Single Post ── */
+.post-content {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.post-content h1 {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.post-content h2 {
+  margin: 28px 0 12px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.post-content h3 {
+  margin: 20px 0 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.post-content p {
+  margin-bottom: 20px;
+  color: var(--text-secondary);
+}
+
+.post-content ul,
+.post-content ol {
+  margin-left: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.post-content li {
+  margin-bottom: 8px;
+  color: var(--text-secondary);
+}
+
+.post-content strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ── Affiliate Box (in content) ── */
+.post-content .affiliate-box {
+  background: #f0f9ff;
+  border-left: 4px solid #0ea5e9;
+  padding: 16px;
+  margin: 24px 0;
+  border-radius: var(--radius-sm);
+}
+
+.post-content .affiliate-box a {
+  color: #2563eb;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.post-content .affiliate-box a:hover {
+  color: #1d4ed8;
+}
+
+/* ── Key Takeaway ── */
+.post-content .key-takeaway {
+  background: var(--accent-light);
+  border-left: 4px solid var(--accent);
+  padding: 16px;
+  margin: 28px 0;
+  border-radius: var(--radius-sm);
+}
+
+.post-content .key-takeaway h3 {
+  margin-top: 0;
+  color: var(--accent-hover);
+}
+
+/* ── Related Posts ── */
+#related-links {
+  list-style: none;
+}
+
+#related-links li {
+  margin-bottom: 12px;
+}
+
+#related-links a {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+#related-links a:hover {
+  color: var(--accent);
+}
+
+/* ── Post Navigation ── */
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-main);
+}
+
+.post-nav a {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.post-nav a:hover {
+  color: var(--accent);
+}
+
+/* ── Loading / Error States ── */
+.loading {
+  color: var(--text-muted);
+  font-style: italic;
+  text-align: center;
+  padding: 2rem;
+}
+
+.error-box {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 1.5rem;
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+
+/* ── Footer ── */
+footer {
+  background: var(--bg-sidebar);
+  padding: 32px 0;
+  margin-top: 48px;
+  border-top: 1px solid var(--border-main);
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+/* ── Legal Pages ── */
+.legal-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.legal-content h1 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+  font-weight: 700;
+}
+
+.legal-content h2 {
+  font-size: 1.3rem;
+  margin: 28px 0 12px;
+  font-weight: 600;
+}
+
+.legal-content p {
+  margin-bottom: 16px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .content-grid,
+  .single-post-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    order: 2;
+  }
+
+  header .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  nav {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .post-content h1 {
+    font-size: 1.7rem;
+  }
+
+  .post-card h2 {
+    font-size: 1.4rem;
+  }
+}
+
+/* ── Print Styles ── */
+@media print {
+  header, footer, .sidebar, .ad-slot, .affiliate-widget {
+    display: none !important;
+  }
+  .content-grid,
+  .single-post-grid {
+    grid-template-columns: 1fr;
+  }
+  .post-content {
+    font-size: 12pt;
+  }
+}

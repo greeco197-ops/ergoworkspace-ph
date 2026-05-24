@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://yourdomain.com/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://yourdomain.com/post.html?slug=ergonomic-chairs-under-10000-peso</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yourdomain.com/post.html?slug=dual-monitor-setup-clutter-free</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yourdomain.com/affiliate-disclosure.html</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://yourdomain.com/privacy-policy.html</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://yourdomain.com/terms-of-use.html</loc>
+    <priority>0.3</priority>
+  </url>
+</urlset>
